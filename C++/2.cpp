@@ -1,17 +1,28 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 using namespace std;
 
-void sieveOfEratostehenes(int n)
+long long int fibonacciSum(int n)
 {
-	bool prime[n+1];
 
-	memset(prime,true)
+	long long int sum = 2;
+	long long int val1 = 1;
+	long long int val2 = 2;
+	long long int current = 0;
+	while(current <= n)
+	{
+		current = val1+val2;
+		val1 = val2;
+		val2 = current;
+		if(current%2==0)
+			sum+=current;
 
-	for (int p = 2; p*p<=n; p++)
+	}
+
+	return sum;
 	
 }
 
 int main()
 {
-
+	printf("%lld\n",fibonacciSum(4000000));
 }
